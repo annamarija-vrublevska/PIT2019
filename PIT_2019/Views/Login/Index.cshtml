@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="~/Scripts/PIT/Login.js"></script>
+
+<h2>Lūdzu, ievadiet lietotāja vārdu un paroli</h2>
+
+<form action="~/Controllers/Login/Login">
+    <table>
+        <tr>
+            <td>Lietotāja vārds:</td>
+            <td>
+                <input id="userName" name="userName" type="text" autocomplete="off" maxlength="20" />
+            </td>
+        </tr>
+        <tr>
+            <td>Parole:</td>
+            <td>
+                <input id="userPassword" name="userPassword" type="password" autocomplete="off" maxlength="15"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input id="LoginButton" type="button" value="Ielagoties" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <span id="errorMessageName" style="color: red; font-weight: bold; display: none;">
+                        Ievadiet lietotāja vārdu
+                    </span>
+                    <br />
+                    <span id="errorMessagePassword" style="color: red; font-weight: bold; display: none;">
+                        Ievadiet paroli
+                    </span>
+                    <br />
+                    <span id="errorMessageUser" style="color: red; font-weight: bold; display: none;">
+                        Nepareizs lietotāja vārds vai parole
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>

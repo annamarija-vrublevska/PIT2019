@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+    @{
+        ViewBag.Title = "Autorizācija";
+    }
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+<body>
+    <a href="@Url.Action("Index", "Login")" title="Widget View" class="links">
+        <img src="@Url.Content("~/Content/logo.jpg")" style="height: 100px;">
+    </a>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+
