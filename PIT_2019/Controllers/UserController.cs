@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIT_2019.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -40,6 +41,7 @@ namespace PIT_2019.Controllers
 
         public ActionResult Get(int id)
         {
+            ViewBag.CurrentUser = Session["currentUser"] as UserModel;
             return View();
         }
 

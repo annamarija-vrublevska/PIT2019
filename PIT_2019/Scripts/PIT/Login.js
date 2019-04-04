@@ -1,16 +1,26 @@
 ﻿$(function () {
     $("#errorMessageName").hide();
     $("#errorMessagePassword").hide();
+    $("#errorMessageJson").hide();
     $("#LoginButton").on("click", function () {
         if (nameValid() && passwordValid()) {
             $.ajax({
                 method: "GET",
                 url: "Login/Login",
-                dataType: "script",
+                dataType: "json",
                 data: {
                     userName: $("#userName").val(),
                     userPassword: $("#userPassword").val()
+                },
+                success: function (data) {
+                    if (!data.Success) {
+                        $("#errorMessageJson").text(data.Message);
+                        $("#errorMessageJson").show();
+                    } else {
+                        window.location = "Order/Index";
+                    }
                 }
+
             });
         }
     });
